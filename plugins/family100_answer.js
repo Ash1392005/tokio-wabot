@@ -11,7 +11,7 @@ module.exports = {
         if (!isSurrender) {
             let index = room.jawaban.indexOf(text)
             if (index < 0) {
-                if (Math.max(...room.jawaban.filter((_, index) => !room.terjawab[index]).map(jawaban => similarity(jawaban, text))) >= threshold) m.reply('Dikit lagi!')
+                if (Math.max(...room.jawaban.filter((_, index) => !room.terjawab[index]).map(jawaban => similarity(jawaban, text))) >= threshold) m.reply('A little more!')
                 return !0
             }
             if (room.terjawab[index]) return !0
@@ -21,7 +21,7 @@ module.exports = {
         }
         let isWin = room.terjawab.length === room.terjawab.filter(v => v).length
         let caption = 
-*Soal:* ${room.soal}
+*About:* ${room.soal}
 
 There is *${room.jawaban.length}* answer${room.jawaban.find(v => v.includes(' ')) ? 
 (some answers have spaces)
@@ -31,9 +31,9 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             return isSurrender  room.terjawab[index] ? (${index + 1}) ${jawaban} ${room.terjawab[index] ? '@' + room.terjawab[index].split('@')[0] : ''}.trim() : false
         }).filter(v => v).join('\n')}
 
-${isSurrender ? '' : +${room.winScore} XP tiap jawaban benar}
+${isSurrender ? '' : +${room.winScore} every answer is correct}
     .trim()
-        await this.sendButton(m.chat, caption, author, ${(isWin  isSurrender) ? 'Family 100' : 'Nyerah'}, ${(isWin  isSurrender) ? '.family100' : 'nyerah'}, null, {
+        await this.sendButton(m.chat, caption, author, ${(isWin  isSurrender) ? 'Family 100' : 'give up'}, ${(isWin  isSurrender) ? '.family100' : 'give up'}, null, {
             contextInfo: {
                 mentionedJid: this.parseMention(caption)
             }
