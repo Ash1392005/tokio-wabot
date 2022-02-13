@@ -4,27 +4,27 @@ async function handler(m) {
     this.game = this.game ? this.game : {}
     let id = 'family100_' + m.chat
     if (id in this.game) {
-        this.reply(m.chat, 'Masih ada kuis yang belum terjawab di chat ini', this.game[id].msg)
+        this.reply(m.chat, 'There are still unanswered quizzes in this chat', this.game[id].msg)
         throw false
     }
-    let res = await fetch(global.API('xteam', '/game/family100', {}, 'APIKEY'))
+    let res = await fetch(global.API('xteam', '/game/family100', { }, 'APIKEY'))
     if (!res.ok) throw await res.text()
     let json = await res.json()
     if (!json.status) throw json
     let caption = `
-*Soal:* ${json.soal}
+*Question:* ${json.question}
 
-Terdapat *${json.jawaban.length}* jawaban${json.jawaban.find(v => v.includes(' ')) ? `
-(beberapa jawaban terdapat spasi)
+Are there *${json.answers.length}* answers${json.answers.find(v => v.includes(' ')) ? `
+(some answers have spaces)
 `: ''}
 
-+${winScore} XP tiap jawaban benar
++${winScore} XP each correct answer
     `.trim()
     this.game[id] = {
-        id,
+        en,
         msg: await this.sendButton(m.chat, caption, author, 'Nyerah', 'nyerah', m),
         ...json,
-        terjawab: Array.from(json.jawaban, () => false),
+        answered: Array.from(json.answer, () => false),
         winScore,
     }
 }
