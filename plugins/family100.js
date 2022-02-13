@@ -14,7 +14,7 @@ async function handler(m) {
     let caption = `
 *About:* ${json.soal}
 
-There is *${json.answer.length}* answer${json.answer.find(v => v.includes(' ')) ? `
+There is *${json.answer}* answer${json.answer.find(v => v.includes(' ')) ? `
 (some answers have spaces)
 `: ''}
 
