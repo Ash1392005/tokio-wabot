@@ -7,24 +7,24 @@ async function handler(m) {
         this.reply(m.chat, 'There are still unanswered quizzes in this chat', this.game[id].msg)
         throw false
     }
-    let res = await fetch(global.API('xteam', '/game/family100', { }, 'APIKEY'))
+    let res = await fetch(global.API('xteam', '/game/family100', {}, 'APIKEY'))
     if (!res.ok) throw await res.text()
     let json = await res.json()
     if (!json.status) throw json
     let caption = `
-*Question:* ${json.question}
+*About:* ${json.soal}
 
-Are there *${json.answers.length}* answers${json.answers.find(v => v.includes(' ')) ? `
+There is *${json.answer.length}* answer${json.answer.find(v => v.includes(' ')) ? `
 (some answers have spaces)
 `: ''}
 
-+${winScore} XP each correct answer
++${winScore} XP every answer is correct
     `.trim()
     this.game[id] = {
-        en,
-        msg: await this.sendButton(m.chat, caption, author, 'Nyerah', 'nyerah', m),
+        id,
+        msg: await this.sendButton(m.chat, caption, author, 'give up', 'giveup', m),
         ...json,
-        answered: Array.from(json.answer, () => false),
+        answerd: Array.from(json.answer, () => false),
         winScore,
     }
 }
