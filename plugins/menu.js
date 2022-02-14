@@ -43,15 +43,15 @@ const defaultMenu = {
 
 〽️ Prefix: *%p*
 📅 Date: *%week, %date*
-💠 Github: github.com/itsajaygaur/tokio-wabot
+💠 Github: github.com/Ash1392005/tokio-wabot
 
 👇🏻 All usable commands are listed below 
 
 %readmore`.trimStart(),
   header: '        *━━❰･%category･❱━━*',
-  body: ' 🌠 %cmd %islimit %isPremium',
+  body: ' 🐣 %cmd %islimit %isPremium',
   footer: ' ',
-  after: `🌟 *Hope you're enjoying bot, have a great day* 
+  after: `🌟 *Hope you're enjoying bot, have a great day ®falling* 
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
@@ -150,7 +150,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    conn.send2ButtonImg(m.chat, thumb, `🏮 I\'m ${conn.user.name}`, text.trim(), 'owner', '-owner', 'rules', '.rules', m)
+    conn.sendFile(m.chat, thumb, 'thumb.jpg', text.trim(), m)
   } catch (e) {
     conn.reply(m.chat, 'Sorry, the menu is in error', m)
     throw e
