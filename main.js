@@ -33,7 +33,7 @@ global.timestamp = {
 const PORT = process.env.PORT || 3000
 global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
 
-global.prefix = new RegExp('^[' + (opts['prefix'] || '‎xzXZ/i!#$%+£¢€¥^°=¶∆×÷π√✓©®:;?&.\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']')
+global.prefix = new RegExp('^[' + (opts['prefix'] || '!').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']')
 
 global.db = new Low(
   /https?:\/\//.test(opts['db'] || '') ?
@@ -131,10 +131,10 @@ global.reloadHandler = function () {
     conn.off('group-participants-update', conn.onParticipantsUpdate)
     conn.off('CB:action,,call', conn.onCall)
   }
-  conn.welcome = 'Hi @user 👋🏻\nWelcome to the group @subject\n\n@desc'
-  conn.bye = 'Goodbye @user 👋🏻'
-  conn.spromote = '@user is now admin!'
-  conn.sdemote = '@user is not admin now!'
+  conn.welcome = 'Hi @user 👋🏻\nWelcome to the group bitch, please be gentle @subject\n\n@desc'
+  conn.bye = 'Goodbye, tada teash out @user 👋🏻'
+  conn.spromote = '@user aur bhai hogye maze? bangye admin!'
+  conn.sdemote = '@user 🤣🤣🤣ye banega admin?!'
   conn.handler = handler.handler
   conn.onDelete = handler.delete
   conn.onParticipantsUpdate = handler.participantsUpdate
