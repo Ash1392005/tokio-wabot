@@ -34,24 +34,24 @@ let tags = {
 const defaultMenu = {
   before: `
 
-🙏🏻 Namaste %name, how can i help you?
+🙏🏻 Namaste %name, 𝓗𝓸𝓮 𝓬𝓪𝓷 𝓲 𝓱𝓮𝓵𝓹 𝔂𝓾 𝓫𝓸𝓸𝓽𝔂𝓯𝓸𝓸𝓵?
 
-🪵 Left: *%limit Limit*
-🎗️ Role: *%role*
-🛕 Level: *%level* 
-☕ Total XP: *%totalexp*
+�֎ Left: *%limit Limit*
+߷ Role: *%role*
+�〠 Level: *%level* 
+༒ Total XP: *%totalexp*
 
-〽️ Prefix: *%p*
+꧂ Prefix: *%p*
 📅 Date: *%week, %date*
-💠 Github: github.com/Ash1392005/tokio-wabot
+�༼𝓲𝓷𝓼𝓽𝓪༽ 𝓲𝓷𝓼𝓽𝓪: https://www.instagram.com/p/CaHdRKGpmc8/?utm_medium=copy_link
 
 👇🏻 All usable commands are listed below 
 
 %readmore`.trimStart(),
   header: '        *━━❰･%category･❱━━*',
-  body: ' 🐣 %cmd %islimit %isPremium',
+  body: ' 🕷️ⵥ %cmd %islimit %isPremium',
   footer: ' ',
-  after: `🌟 *Hope you're enjoying bot, have a great day ®falling* 
+  after: '᳡🌝 *Hope you᳑'re enjoying bot, have a great day ®falling* 
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
