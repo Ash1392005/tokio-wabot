@@ -34,22 +34,22 @@ let tags = {
 const defaultMenu = {
   before: `
 
-🙏🏻 Namaste %name, how can i help you?
+🙏🏻 Namaste %name, how can i help you?, bitch be gentle
 
-🪵 Left: *%limit Limit*
-🎗️ Role: *%role*
-🛕 Level: *%level* 
-☕ Total XP: *%totalexp*
+꧂ 𝓛𝓮𝓯𝓽: *%limit Limit*
+߷ 𝓡𝓸𝓵𝓮: *%role*
+〠 𝓛𝓮𝓿𝓮𝓵: *%level* 
+֎ 𝓣𝓸𝓽𝓪𝓵 𝓒𝓟: *%totalexp*
 
 〽️ Prefix: *%p*
 📅 Date: *%week, %date*
-💠 Github: github.com/itsajaygaur/tokio-wabot
+💠 𝓲𝓷𝓼𝓽𝓪𝓰𝓻𝓪𝓶: https://instagram.com/falling_1392005
 
 👇🏻 All usable commands are listed below 
 
 %readmore`.trimStart(),
   header: '        *━━❰･%category･❱━━*',
-  body: ' 🌠 %cmd %islimit %isPremium',
+  body: '  🕷️%cmd %islimit %isPremium',
   footer: ' ',
   after: `🌟 *Hope you're enjoying bot, have a great day* 
 `,
