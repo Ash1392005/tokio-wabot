@@ -41,7 +41,7 @@ const defaultMenu = {
 �〠 Level: *%level* 
 ༒ Total XP: *%totalexp*
 
-꧂ Prefix: *%p*
+〽️ Prefix: *%p*
 📅 Date: *%week, %date*
 �༼𝓲𝓷𝓼𝓽𝓪༽ 𝓲𝓷𝓼𝓽𝓪: https://www.instagram.com/p/CaHdRKGpmc8/?utm_medium=copy_link
 
