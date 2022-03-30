@@ -34,24 +34,24 @@ let tags = {
 const defaultMenu = {
   before: `
 
-🙏🏻 Namaste %name, 𝓗𝓸𝓮 𝓬𝓪𝓷 𝓲 𝓱𝓮𝓵𝓹 𝔂𝓾 𝓫𝓸𝓸𝓽𝔂𝓯𝓸𝓸𝓵?
+🙏🏻 Namaste %name, how can i help you?
 
-�֎ Left: *%limit Limit*
-߷ Role: *%role*
-�〠 Level: *%level* 
-༒ Total XP: *%totalexp*
+🪵 Left: *%limit Limit*
+🎗️ Role: *%role*
+🛕 Level: *%level* 
+☕ Total XP: *%totalexp*
 
 〽️ Prefix: *%p*
 📅 Date: *%week, %date*
-�༼𝓲𝓷𝓼𝓽𝓪༽ 𝓲𝓷𝓼𝓽𝓪: https://www.instagram.com/p/CaHdRKGpmc8/?utm_medium=copy_link
+💠 Github: github.com/itsajaygaur/tokio-wabot
 
 👇🏻 All usable commands are listed below 
 
 %readmore`.trimStart(),
   header: '        *━━❰･%category･❱━━*',
-  body: ' 🕷️ⵥ %cmd %islimit %isPremium',
+  body: ' 🌠 %cmd %islimit %isPremium',
   footer: ' ',
-  after: '᳡🌝 *Hope you᳑'re enjoying bot, have a great day ®falling* 
+  after: `🌟 *Hope you're enjoying bot, have a great day* 
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
@@ -150,7 +150,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    conn.sendFile(m.chat, thumb, 'thumb.jpg', text.trim(), m)
+    conn.send2ButtonImg(m.chat, thumb, `🏮 I\'m ${conn.user.name}`, text.trim(), 'owner', `${_p}owner`, 'rules', `${_p}rules`, m)
   } catch (e) {
     conn.reply(m.chat, 'Sorry, the menu is in error', m)
     throw e
